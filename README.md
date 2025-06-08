@@ -1,95 +1,57 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-
--------------------------
-
-
 # Info
 
-Проект "Редактор email-письма"
+- Проект `email-editor` (Редактор email-письма)
+  
+- Написан на TypeScript + React + Vite
 
-email-editor
+- Фейковый REST API создан с импользованием библиотеки **JSON Server**
 
--------------------------------------------------------
+  - в качестве базы данных создаём файл `db.json` 
 
-npm create vite my-react-app -- --template react
+![](./pictures/pic_01_1_db.png)
 
-cd my-react-app
+  - запускаем сервер командой `npx json-server db.json`
 
-Устанавливаем все зависимости нашего проекта, перечисленные в файле package.json
+![](./pictures/pic_02_1_json_server.png)
 
-    npm install
+  - после этого сервер будет доступен по адресу `http://localhost:3000`
 
-Теперь надо запустить проект. В файле package.json есть секция scripts,
-в которой есть скрипт dev - он запускает наш проект в режиме разработчика.
-Введём в терминале команду:
+![](./pictures/pic_03_1_localhost.png)
 
-    npm run dev
+- Как запустить приложение локально на ПК:
 
--------------------------
+  - клонировать проект с Github
+    
+  - устанавить все зависимости проекта, перечисленные в файле `package.json`, командой `npm install`
+  
+  - запустить сервер командой `npx json-server db.json`
+  
+  - в файле `package.json` есть секция `scripts`, в которой есть скрипт `dev` - он запускает проект 
+    в режиме разработчика. Ввести в терминале команду `npm run dev`
 
-База данных json-server
+![](./pictures/pic_04_1_run_dev.png)
 
-файл db.json
+далее открываем в браузере указанный адрес `http://localhost:5173/`
 
-команда на запуск базы данных
+- Примеры работы приложения:
 
-    npx json-server db.json
+Запуск:
 
+![](./pictures/pic_05_1_start.png)
 
+Набираем текст письма, редактируем его:
 
-------------------------
+![](./pictures/pic_06_1_edit.png)
 
-Видео: https://rutube.ru/video/abe3c84f92336a959e8cb88519789073/
+"Отправляем" письмо (по факту емаил никуда не уходит, а просто сохраняется в БД). Справа отображается
+список "отправленных" писем:
 
-## Остановился на моменте времени 02:11:30  - продолжаю ПРАКТИКу
+![](./pictures/pic_07_1_emails.png)
 
+БД сейчас выглядит так:
 
+![](./pictures/pic_08_1_db_in_browser.png)
+
+![](./pictures/pic_09_1_db_file.png)
+
+---

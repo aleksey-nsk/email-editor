@@ -2,6 +2,7 @@ import {applyStyle, TStyle} from "./apply-style";
 import {useRef, useState} from "react";
 
 export function useEditor() {
+
     const [text, setText] = useState(`Enter email...`)
     const [selectionStart, setSelectionStart] = useState(0)
     const [selectionEnd, setSelectionEnd] = useState(0)
@@ -17,13 +18,6 @@ export function useEditor() {
     }
 
     const applyFormat = (type: TStyle) => {
-        // if (!textRef.current) {
-        //     return
-        // }
-        //
-        // const cursorStart = textRef.current?.selectionStart
-        // const cursorEnd = textRef.current?.selectionEnd
-
         const selectedText = text.substring(selectionStart, selectionEnd); // выделенный текст
         if (!selectedText) {
             return

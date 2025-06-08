@@ -1,13 +1,12 @@
 import styles from './EmailEditor.module.scss'
 import {Bold, Eraser, Italic, Underline} from "lucide-react";
-import {useRef, useState} from "react";
-import {applyStyle, TStyle} from "./apply-style";
 import parse from 'html-react-parser';
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {emailService} from "../../services/email.service";
 import {useEditor} from "./useEditor";
 
 export function EmailEditor() {
+
     const {text, setText, textRef, applyFormat, updateSelection} = useEditor()
 
     const queryClient = useQueryClient()
@@ -20,8 +19,6 @@ export function EmailEditor() {
             queryClient.refetchQueries({queryKey: ['email list']})
         }
     })
-
-
 
     return (
         <div>
