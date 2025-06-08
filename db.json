@@ -1,0 +1,20 @@
+{
+  "emails": [
+    {
+      "text": "default email",
+      "id": "c335"
+    },
+    {
+      "id": "28fc",
+      "text": "<b>Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation</b>\nullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit\ness<i>e cillum dolore eu fugiat nulla pariatur. Exc</i>epteur sint\noccaecat cupidatat non proident, sunt in culpa qui officia\n<u>deserunt mollit anim id est laborum.</u>"
+    },
+    {
+      "id": "4c87",
+      "text": "<i>Hello</i> <b>Max</b>. This is <u>new email</u>!"
+    },
+    {
+      "id": "7cbc",
+      "text": "<b>Hello</b>, <i>how</i> are <u>you</u>?"
+    }
+  ]
+}
